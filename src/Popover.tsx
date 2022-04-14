@@ -40,6 +40,7 @@ const PopoverInternal = forwardRef<HTMLElement, PopoverProps>(
       contentLocation,
       boundaryInset = 0,
       onClickOutside,
+      wrapperComponent: WrapperComponent,
     },
     externalRef,
   ) => {
@@ -234,7 +235,11 @@ const PopoverInternal = forwardRef<HTMLElement, PopoverProps>(
     return (
       <>
         {renderChild()}
-        {renderPopover()}
+        {!!WrapperComponent ? (
+          <WrapperComponent>{renderPopover()}</WrapperComponent>
+        ) : (
+          renderPopover()
+        )}
       </>
     );
   },

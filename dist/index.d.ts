@@ -71,7 +71,7 @@ export interface PopoverProps {
   boundaryInset?: number;
   boundaryTolerance?: number;
   onClickOutside?: (e: MouseEvent) => void;
-  wrapperComponent?: React.FC<PopoverWrapperComponentProps>;
+  wrapperComponent?: React.FC;
 }
 
 export interface PopoverWrapperComponentProps {
